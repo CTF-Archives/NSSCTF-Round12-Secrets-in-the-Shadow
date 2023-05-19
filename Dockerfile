@@ -4,7 +4,7 @@ RUN sed -i "s/http:\/\/archive.ubuntu.com/http:\/\/mirrors.ustc.edu.cn/g" /etc/a
     sed -i "s/http:\/\/security.ubuntu.com/http:\/\/mirrors.ustc.edu.cn/g" /etc/apt/sources.list
 
 RUN apt-get update && \ 
-    apt-get -y install sudo openssh-server
+    apt-get -y install openssh-server
 
 RUN useradd -m ctf && echo "ctf:ctf" && \
     echo "ctf:ctf" | chpasswd --crypt-method SHA512 && \
